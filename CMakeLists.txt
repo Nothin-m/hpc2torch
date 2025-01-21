@@ -6,6 +6,13 @@ project(MyCUDAProject)
 find_package(Python3 REQUIRED)
 include_directories(${Python3_INCLUDE_DIRS})
 
+find_package(CUDA REQUIRED)
+
+include_directories(${CUDA_INCLUDE_DIRS})
+link_directories(${CUDA_LIBRARY_DIRS})
+
+
+
 # 设置 CUDA 编译选项
 set(CUDA_NVCC_FLAGS "${CUDA_NVCC_FLAGS} -O3")
 
